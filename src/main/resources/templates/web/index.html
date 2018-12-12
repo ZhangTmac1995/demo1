@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	
+	name:<input name="name" id="name">
+	age:<input name="age" id="age">
+	<input type="button" value="add" id="bt" onclick="add()">
+	
+</body>
+<script type="text/javascript" src="/js/jquery-3.1.1.min.js"></script>
+<script type="text/javascript">
+function add(){
+	$.ajax({
+		url:"../add",
+		data:"name="+$("#name").val()+"&age="+$("#age").val(),
+		type:"post",
+		dataType:"json",
+		success:function(obj){
+		if(obj.state==1){
+			alert(obj.message);
+		}else{
+			alert("add faild");
+		}
+		}
+	});	
+}
+
+</script>
+</html>
