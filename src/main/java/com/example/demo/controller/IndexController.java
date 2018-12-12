@@ -53,6 +53,11 @@ public class IndexController {
 		return rr;
 	}
 
+	/**
+	 * asd
+	 * @param uid
+	 * @return
+	 */
 	@RequestMapping(value = "/select",method = RequestMethod.GET)
 	public ModelAndView index4(Integer uid){
 		System.out.println(uid);
